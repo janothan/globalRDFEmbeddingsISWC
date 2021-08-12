@@ -1,4 +1,10 @@
+# Changes Introduced in this Fork
+- 
+
+
 # Running the Original Implementation in Ubuntu
+Guide to run the original implementation:
+
 - Use eclipse on ubuntu and import the project from git; original URI: [https://github.com/miselico/globalRDFEmbeddingsISWC](https://github.com/miselico/globalRDFEmbeddingsISWC).
 - Download Snap 3.0 from [http://snap.stanford.edu/snap/releases.html](http://snap.stanford.edu/snap/releases.html).
 - Download Boost 1.63 from [https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz/download](https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz/download)
@@ -17,7 +23,7 @@ If this works, good. If not (error `No such file or directory: #include "base.h"
 - In file `.cproject`, change the paths referring to cochez (lines 47 and 105) so that they point to the dependency files in your system environment.  
 
 Try to build. If it works, good. If not (error `incomplete type struct __exception`):
-- go to file .../Snap-3.0/snap-core/bd.cpp
+- go to file `.../Snap-3.0/snap-core/bd.cpp`
 - add in line 13 (right below line 12 stating `#elif defined(GLib_GLIBC) || defined(GLib_BSD)`) - [github issue #146](https://github.com/snap-stanford/snap/issues/146):
 ```C
 struct __exception {
@@ -29,13 +35,13 @@ struct __exception {
 };
 ```
 
-Try to build. If it works, good. If not (error: invalid conversion from char to const void):
-- Fix the error directly in fl.cpp line 1157 by adding the explicit cast:
-write(output, (const void*) '\0', 1);
+Try to build. If it works, good. If not (`error: invalid conversion from char to const void`):
+- Fix the error directly in `.../Snap-3.0/snap-core/fl.cpp` line 1157 by adding the explicit cast:
+`write(output, (const void*) '\0', 1);`
 
-Try to build, it if works, good. If not (error LoadSSPAr not declared):
+Try to build, it if works, good. If not (`error LoadSSPAr not declared`):
 - Fix the error directly in file table.cpp in line 765 by replacing the line with:
-LoadSSSeq(T, S, InFNm, RelevantCols, Separator, HasTitleLine);
+`LoadSSSeq(T, S, InFNm, RelevantCols, Separator, HasTitleLine);`
 
-The build should work now. You should find a file RDFConverter in directory Debug.
+The build should work now. You should find a file `RDFConverter` in directory `Debug`.
 	
