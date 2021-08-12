@@ -10,10 +10,32 @@
 	- .../Snap-3.0/glib-core
 	- .../boost_1_63_0
 - try to build the project by clicking on the hammer in eclipse
+- Note that you have to delete directory debug always when the build fails and you changed something.
 
 If this works, good. If not (error `No such file or directory: #include "base.h"`):
 - Copy all contents of snap-core, snap-exp, snap-adv, glib-core into snap-core.
-- 
+- In file `.cproject`, change the paths referring to cochez (lines 47 and 105) so that they point to the dependency files in your system environment.  
+
+Try to build. If it works, good. If not (error `incomplete type struct __exception`):
+- go to file .../Snap-3.0/snap-core/bd.cpp
+- add in line 13 (right below line 12 stating `#elif defined(GLib_GLIBC) || defined(GLib_BSD)`) - [github issue #146](https://github.com/snap-stanford/snap/issues/146):
+```C
+struct __exception {
+    int    type;      /* Exception type */
+    char*  name;      /* Name of function causing exception */
+    double arg1;      /* 1st argument to function */
+    double arg2;      /* 2nd argument to function */
+    double retval;    /* Function return value */
+};
+```
+
+Try to build. If it works, good. If not (error: invalid conversion from char to const void):
+- Fix the error directly in fl.cpp line 1157 by adding the explicit cast:
+write(output, (const void*) '\0', 1);
+
+Try to build, it if works, good. If not (error LoadSSPAr not declared):
+- Fix the error directly in file table.cpp in line 765 by replacing the line with:
+LoadSSSeq(T, S, InFNm, RelevantCols, Separator, HasTitleLine);
 
 
 	
