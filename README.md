@@ -37,5 +37,5 @@ Try to build, it if works, good. If not (error LoadSSPAr not declared):
 - Fix the error directly in file table.cpp in line 765 by replacing the line with:
 LoadSSSeq(T, S, InFNm, RelevantCols, Separator, HasTitleLine);
 
-
+The build should work now. You should find a file RDFConverter in directory Debug.
 	
