@@ -1,5 +1,5 @@
 # Changes Introduced in this Fork
-- 
+- Added a simple CLI so that the input file is configurable together with the weighting strategy. For a full list of options, call the compiled program with parameter `help`.
 
 
 # Running the Original Implementation in Ubuntu

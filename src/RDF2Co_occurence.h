@@ -2,7 +2,7 @@
  * RDF2Co_occurence.h
  *
  *  Created on: Nov 29, 2016
- *      Author: cochez
+ *      Author: cochez, portisch
  */
 
 #ifndef RDF2CO_OCCURENCE_H_

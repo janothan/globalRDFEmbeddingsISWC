@@ -2,7 +2,7 @@
  * Main.cpp
  *
  *  Created on: Nov 29, 2016
- *      Author: cochez
+ *      Author: cochez, portisch
  */
 
 #include "Snap.h"
@@ -42,7 +42,29 @@ string getSucceedingParameter(const char *checkWord, int argc, char **argv) {
 	return "";
 }
 
+void printHelp(){
+	string weigherNames[8] = { "Unif", "Pred", "InvPred", "Obj", "InvObj",
+					"InvObjSD", "PredObj", "InvPredObj" };
+
+	cout << "Parameters:" << endl << endl;
+	cout << "graph <graph_path>" << endl;
+	cout << "\tThe graph that shall be used." << endl << endl;
+	cout << "mode <0...8>" << endl;
+	for(int i = 0; i < 8; i++){
+		cout << "\t(" << i << ") " + weigherNames[i] << endl;
+	}
+
+}
+
 int main(int argc, char **argv) {
+
+	const char *help = "help";
+	if(argc == 0 || containsCheckword(help, argc, argv)){
+		printHelp();
+		return 0;
+	}
+
+
 	TStr filePath = TStr("graph.nt");
 	const char *graphParameter = "graph";
 	string filePathStr = getSucceedingParameter(graphParameter, argc, argv);
@@ -63,8 +85,6 @@ int main(int argc, char **argv) {
 	weighers.push_back(new InverseObjectFrequencyWeigherSplitDown);
 	weighers.push_back(new PredicateObjectFrequencyWeigher);
 	weighers.push_back(new InversePredicateObjectFrequencyWeigher);
-	string weigherNames[8] = { "Unif", "Pred", "InvPred", "Obj", "InvObj",
-			"InvObjSD", "PredObj", "InvPredObj" };
 
 	// using default: first weigher
 	int option;

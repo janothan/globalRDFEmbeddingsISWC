@@ -2,7 +2,7 @@
  * RDF2Co_occurence.cpp
  *
  *  Created on: Nov 29, 2016
- *      Author: cochez
+ *      Author: cochez, portisch
  */
 
 #include <iostream>
