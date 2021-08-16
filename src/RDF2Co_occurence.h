@@ -11,6 +11,6 @@
 #include "GraphWeigher.h"
 
 namespace RDF2CO {
-void performExperiments();
+void performExperiments(TStr filePath, GraphWeigher* weigher);
 }
 #endif /* RDF2CO_OCCURENCE_H_ */

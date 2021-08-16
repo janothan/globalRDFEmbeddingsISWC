@@ -24,11 +24,11 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1030871823" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1950672249" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.177328166" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/jan/cpp_dependencies/adapted/boost_1_63_0"/>
-									<listOptionValue builtIn="false" value="/home/jan/cpp_dependencies/adapted/Snap-3.0/glib-core"/>
-									<listOptionValue builtIn="false" value="/home/jan/cpp_dependencies/adapted/Snap-3.0/snap-adv"/>
-									<listOptionValue builtIn="false" value="/home/jan/cpp_dependencies/adapted/Snap-3.0/snap-core"/>
-									<listOptionValue builtIn="false" value="/home/jan/cpp_dependencies/adapted/Snap-3.0/snap-exp"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/boost_1_63_0"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/Snap-3.0/glib-core"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/Snap-3.0/snap-adv"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/Snap-3.0/snap-core"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/Snap-3.0/snap-exp"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.147456681" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++1y" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.other.other.252422633" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-fopenmp  -c -fmessage-length=0 -DNDEBUG" valueType="string"/>
@@ -44,7 +44,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.576621454" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.2088953823" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.243616308" name="Other objects" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
-									<listOptionValue builtIn="false" value="/home/cochez/Documents/RDF2Vec/workspaceC++/Snap-3.0/snap-core/Snap.o"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/Snap-3.0/snap-core/Snap.o"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.986833963" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="rt"/>
@@ -102,7 +102,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.584519493" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.12222093" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
 								<option id="gnu.cpp.link.option.userobjs.1834351392" name="Other objects" superClass="gnu.cpp.link.option.userobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="/home/cochez/Documents/RDF2Vec/workspaceC++/Snap-3.0/snap-core/Snap.o"/>
+									<listOptionValue builtIn="false" value="/home/developer/cpp_dependencies/adapted/Snap-3.0/snap-core/Snap.o"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.2118306745" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-fopenmp" valueType="string"/>
 								<option id="gnu.cpp.link.option.libs.2058677637" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
