@@ -9,8 +9,9 @@
 #define RDF2CO_OCCURENCE_H_
 
 #include "GraphWeigher.h"
+#include <string>
 
 namespace RDF2CO {
-void performExperiments(TStr filePath, GraphWeigher* weigher);
+void performExperiments(TStr filePath, GraphWeigher* weigher, std::string weigherName);
 }
 #endif /* RDF2CO_OCCURENCE_H_ */

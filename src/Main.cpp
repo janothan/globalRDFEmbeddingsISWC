@@ -17,6 +17,9 @@
 
 using namespace std;
 
+/**
+ * Returns true if the given checkword appears in the char**.
+ */
 bool containsCheckword(const char *checkword, int argc, char **argv) {
 	for (int i = 0; i < argc; i++) {
 		if (strcmp(argv[i], checkword) == 0) {
@@ -30,6 +33,11 @@ string containsCheckwordStr(const char *checkword, int argc, char **argv) {
 	return containsCheckword(checkword, argc, argv) ? "true" : "false";
 }
 
+/**
+ * Returns the succeeding word after checkWord given the char**.
+ * Will return an empty string if the checkWord was not found or if there
+ * is no succeeding word.
+ */
 string getSucceedingParameter(const char *checkWord, int argc, char **argv) {
 	if (!containsCheckword(checkWord, argc, argv)) {
 		return "";
@@ -42,20 +50,25 @@ string getSucceedingParameter(const char *checkWord, int argc, char **argv) {
 	return "";
 }
 
-void printHelp(){
-	string weigherNames[8] = { "Unif", "Pred", "InvPred", "Obj", "InvObj",
-					"InvObjSD", "PredObj", "InvPredObj" };
+string weigherNames[8] = { "Unif", "Pred", "InvPred", "Obj", "InvObj",
+					"InvObjSD", "PredObj", "InvPredObj"};
 
+/**
+ * Prints the documentation of the CLI to the console.
+ */
+void printHelp(){
 	cout << "Parameters:" << endl << endl;
 	cout << "graph <graph_path>" << endl;
 	cout << "\tThe graph that shall be used." << endl << endl;
-	cout << "mode <0...8>" << endl;
+	cout << "mode <0...7>" << endl;
 	for(int i = 0; i < 8; i++){
-		cout << "\t(" << i << ") " + weigherNames[i] << endl;
+		cout << "\t(" << i << ") " << weigherNames[i] << endl;
 	}
-
 }
 
+/**
+ * The main function.
+ */
 int main(int argc, char **argv) {
 
 	const char *help = "help";
@@ -63,7 +76,6 @@ int main(int argc, char **argv) {
 		printHelp();
 		return 0;
 	}
-
 
 	TStr filePath = TStr("graph.nt");
 	const char *graphParameter = "graph";
@@ -77,6 +89,7 @@ int main(int argc, char **argv) {
 
 	vector<GraphWeigher*> weighers;
 	// those are the working ones...
+	// make sure they represent what is stated in variable weigherNames
 	weighers.push_back(new UniformWeigher);
 	weighers.push_back(new PredicateFrequencyWeigher);
 	weighers.push_back(new InversePredicateFrequencyWeigher);
@@ -102,7 +115,7 @@ int main(int argc, char **argv) {
 	cout << "Using mode: " << option << "\n";
 
 	try {
-		RDF2CO::performExperiments(filePath, weigher);
+		RDF2CO::performExperiments(filePath, weigher, weigherNames[option]);
 	} catch (char const *str) {
 		cout << str << endl;
 		throw str;

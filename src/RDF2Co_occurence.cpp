@@ -827,7 +827,7 @@ namespace RDF2CO {
 //	BCAOrder::ComputeBCAOrder(graphInputFile, BCAOrderFile);
 //}
 
-void performExperiments(TStr filePath, GraphWeigher *weigher) {
+void performExperiments(TStr filePath, GraphWeigher *weigher, string weigherName) {
 	TStr graphInputFile = filePath;
 
 //TStr graphInputFile = "SmallTest.nt";
@@ -846,13 +846,18 @@ void performExperiments(TStr filePath, GraphWeigher *weigher) {
 	double eps = 0.00001;
 	double alpha = 0.1;
 
-	string glove_input_file = "glove_input_file_out_alpha_"
-			+ boost::lexical_cast<std::string>(alpha) + "_eps_"
-			+ boost::lexical_cast<std::string>(eps) + ".bin";
 
-	string glove_vocab_file = "glove_vocab_file_out_alpha_"
+	string glove_input_file = "glove_input_file_out_"
+			+ weigherName + "_alpha_"
 			+ boost::lexical_cast<std::string>(alpha) + "_eps_"
-			+ boost::lexical_cast<std::string>(eps) + ".bin";
+			+ boost::lexical_cast<std::string>(eps)
+			+ ".bin";
+
+	string glove_vocab_file = "glove_vocab_file_out_"
+			+ weigherName + "_alpha_"
+			+ boost::lexical_cast<std::string>(alpha) + "_eps_"
+			+ boost::lexical_cast<std::string>(eps)
+			+ ".bin";
 
 	cout << "writing to " << glove_input_file << endl;
 	cout << "\tand " << glove_vocab_file << endl;
