@@ -1,6 +1,13 @@
 # Changes Introduced in this Fork
 - Added a simple CLI so that the input file is configurable together with the weighting strategy. For a full list of options, call the compiled program with parameter `help`.
 
+# Workflow
+- First, you need a compiled version `globalRDFEmbeddingsISWC` script. You can compile either this project [or the original one](#running-the-original-implementation-in-ubuntu).
+- However, both scripts will only generate various co-occurrence matrices for you. Once you have the co-occurence data (`glove_input_file...bin`, `glove_vocab_file_...bin`), you still need to apply the actual glove algorithm.
+- Go to [the GloVe GitHub repository](https://github.com/stanfordnlp/GloVe), download the latest release, and compile it with `make`.
+- Run the glove script on your previously generated co-occurence data.
+- By default, a bin file will be written. If you need a txt vector file, you can use [this script](https://gist.github.com/Prillan/641b5491b961ec25ec88fa3df953420e) to do so.
+
 
 # Running the Original Implementation in Ubuntu
 Guide to run the original implementation:
